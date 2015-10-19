@@ -1,0 +1,38 @@
+{
+  "name": "nodejs-api",
+  "version": "1.0.0",
+  "description": "Mi9 Coding Challenge writen using Node.js Koa",
+  "main": "server.js",
+  "scripts": {
+    "start": "node --harmony server.js",
+    "test": "jasmine-node spec/api/get_shows_spec.js --config HOST http://localhost:3000/ --junitreport"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/KSanthanam/nodejs-api"
+  },
+  "keywords": [
+    "Mi9",
+    "challenge",
+    "api"
+  ],
+  "author": "KK Santhanam",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KSanthanam/nodejs-api/issues"
+  },
+  "homepage": "https://github.com/KSanthanam/nodejs-api",
+  "dependencies": {
+    "co-body": "^4.0.0",
+    "debug": "^2.2.0",
+    "fs": "0.0.2",
+    "jsonwebtoken": "^5.4.0",
+    "koa": "^1.1.0",
+    "koa-compress": "^1.0.8",
+    "koa-logger": "^1.3.0",
+    "koa-router": "^5.2.3"
+  },
+  "devDependencies": {
+    "frisby": "^0.8.5"
+  }
+}

@@ -73,22 +73,21 @@ var getPayload = function getPayload(shows, integrityCheck) {
 	let missingflds = [];
 	let missing = payload.map(function (show) {
 													return config.filter.fields.map(function (field) {
-																					if (show[field] == undefined) missingflds.push(field);
-																					return (show[field] == undefined);
+																					if (show[field] == undefined) missingflds.push(field); // Track missing fields
+																					return (show[field] == undefined); // return true for missing fields
 																				}).reduce(function (left, right) {
 																					return (left || right);
-																				}, false);
+																				}, false); // check there is no missing fields
 												}).reduce(function (left, right) {
 													return (left || right);
-												});
+												}); // Ensure no show has missing fields
 
-	if (missing) {
+	if (missing) { // There is a missing field
 		debugParam('Missing fields are %j', missingflds);
 	}
-	if (integrityCheck && missing) {
-		debugParam("Missing fields in the input");
+
+	if (integrityCheck && missing) { // Integrity Check needed and there is at least one missing field
 		throw new Error("Missing fields in the input")
 	}
 	return payload;
 };
-

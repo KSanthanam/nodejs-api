@@ -20,8 +20,7 @@ module.exports = function() {
   };
 };
 
-
-
+// Vailidate JWT Token
 var isAuthenticated = function *(next) {
 	let ctx = this;
   try {

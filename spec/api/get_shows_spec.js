@@ -322,3 +322,30 @@ frisby.create('Post undefined and receive 400 error (unsecured)' + host )
     })
 .toss();
 
+
+// Call Secured with out tokens
+frisby.create('Post and receive filtered shows list (secured) at ' + host )
+  .post(host + 'api/challenge',  shows)
+  .inspectJSON()
+  .expectStatus(400)
+  .expectJSONTypes({
+      response: Object
+    })
+.toss();
+frisby.create('Post null and receive 400 error (secured)' + host )
+  .post(host + 'api/challenge',  null)
+  .inspectJSON()
+  .expectStatus(400)
+  .expectJSONTypes({
+      response: Object
+    })
+.toss();
+
+frisby.create('Post undefined and receive 400 error (secured)' + host )
+  .post(host + 'api/challenge')
+  .inspectJSON()
+  .expectStatus(400)
+  .expectJSONTypes({
+      response: Object
+    })
+.toss();

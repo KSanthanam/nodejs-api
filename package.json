@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "Mi9 Coding Challenge writen using Node.js Koa",
   "main": "server.js",
+  "engines": {
+    "node": "4.2.1",
+    "npm": "2.14.7"
+    },
   "scripts": {
     "start": "node --harmony server.js",
     "test": "jasmine-node spec/api/get_shows_spec.js --config HOST http://localhost:3000/ --junitreport"
@@ -10,7 +14,7 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/KSanthanam/nodejs-api"
-  },
+  },  
   "keywords": [
     "Mi9",
     "challenge",

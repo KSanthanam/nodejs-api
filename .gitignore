@@ -1,3 +1,11 @@
+### Editor Files
+# Sublime
+*.sublime-project
+*.sublime-workspace
+
+# WebStorm
+.idea/*
+
 ### Node template
 # Logs
 logs
@@ -27,5 +35,8 @@ build/Release
 # Dependency directory
 # https://docs.npmjs.com/misc/faq#should-i-check-my-node-modules-folder-into-git
 node_modules
+
+#Test reports directory
+reports
 
 # Created by .ignore support plugin (hsz.mobi)

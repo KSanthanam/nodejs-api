@@ -12,7 +12,7 @@ const config 	= require(__dirname+'/config.js'),
 // Logger
 app.use(logger());
 
-//API Routes
+// API Routes
 apis(app);
 
 // Compress

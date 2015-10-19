@@ -5,21 +5,21 @@
 const Router = require('koa-router');
 
 const filter 	= require(__dirname+'/../controllers/filter.js')(),
- 			auth 	= require(__dirname+'/../controllers/auth.js')();
+		 	auth 	= require(__dirname+'/../controllers/auth.js')();
 
 module.exports 	= function routes(app) {
 
-	// Unsecured routes
+	// Unauthorised routes
 	const unauth = new Router();
-	unauth.post('/challenge', filter.filterShows);
+	unauth.post('/', filter.filterShows);
 	app.use(unauth.routes());
 
-	// Require authentication for now onwards
+	// Require authentication for now
 	app.use(auth.isAuthenticated);
 
-	// Secured Routes
+
+	// Authorised routes
 	const secured = new Router();
 	secured.post('/api/challenge', filter.filterShows);
 	app.use(secured.routes())
-
 };

@@ -297,7 +297,7 @@ frisby.create('Post undefined and receive 400 error with valid' + host )
 
 // unsecured
 frisby.create('Post and receive filtered shows list (unsecured) at ' + host )
-  .post(host + 'challenge',  shows)
+  .post(host,  shows)
   .inspectJSON()
   .expectStatus(200)
   .expectJSONTypes({
@@ -305,7 +305,7 @@ frisby.create('Post and receive filtered shows list (unsecured) at ' + host )
     })
 .toss();
 frisby.create('Post null and receive 400 error (unsecured)' + host )
-  .post(host + 'challenge',  null)
+  .post(host ,  null)
   .inspectJSON()
   .expectStatus(400)
   .expectJSONTypes({
@@ -314,7 +314,7 @@ frisby.create('Post null and receive 400 error (unsecured)' + host )
 .toss();
 
 frisby.create('Post undefined and receive 400 error (unsecured)' + host )
-  .post(host + 'challenge')
+  .post(host)
   .inspectJSON()
   .expectStatus(400)
   .expectJSONTypes({

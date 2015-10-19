@@ -16,15 +16,17 @@ const config 	= require(__dirname+'/config.js');
 
 module.exports = function() {
   return {
-  	filterShows: filterShows
+  	filterShows: filterShows // filter Shows 
   };
 };
 
 var filterShows = function *(next) {
 	let ctx = this;
-  let shows = yield parse(ctx);
   try {
-  	let payload = getPayload(shows, true);
+
+	  let shows = yield parse(ctx); // parse the post in the body.
+  	let payload = getPayload(shows, true); // Validate & Sanitize the payload
+
   	let response = [];
 
 		payload.map(function (show) {
@@ -33,7 +35,7 @@ var filterShows = function *(next) {
 																										slug: show.slug,
 																										title: show.title
 																									});
-		});
+		}); // map the pay load to filter conditions set in the config
 
 		ctx.body = { 
 			response: response

@@ -9,7 +9,7 @@ var version = require('./package.json').version;
 module.exports = {
     env: process.env.NODE_ENV || 'development',
     express: {
-        port: process.env.EXPRESS_PORT ||  3000
+        port: process.env.EXPRESS_PORT ||  8080
     },
 	app:  {
 		name: 'Mi9 Code Challenge',
